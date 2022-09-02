@@ -1,0 +1,62 @@
+Setting a React JS environment: 
+	1. Install Node.js
+	2. Open terminal:
+```
+npx create-react-app my-app
+cd my-app
+npm start
+```
+	3. To preview browser window
+		npm start
+
+
+React Tutorial 
+
+Virtual DOM: Virtual representation of the actual DOM. It uses a strategy that updates the DOM without having to redraw all the webpage elements. This ensures that                             the actual DOM receive only the necessary data to repaint the UI.
+
+Starting code for file: index.js 
+```
+import React from "react"
+import ReactDOM from "react-dom"
+
+const element = <h1>Hello from Create React App</h1>
+
+ReactDOM.render(element, document.getElementById("root"))
+```
+------------ COMPONENTS ---------------
+
+An App in React is built by combining a bunch of reusable components. Now, this component can either be a function or a class-based.
+
+A class component is created using the ES6 class syntax while the functional component is created by writing function.
+
+CONTROL COMPONENT: those in which form data is handled by the component's state.
+
+TIP: a class component that only has markup within the render() method can safely be converted to a function component.
+
+NOTE! : You cannot return more than one JSX element next to each other, except you wrap them in a single element. In our case, we wrapped them inside a <div>. But in case you don’t want a redundant wrapper around your element,  you can wrap everything in a React Fragment (a virtual element that doesn’t get shown in the DOM). For instance, use <React.fragment> (or use shortcut, <></>) instead of <div>.
+
+
+
+
+
+
+
+
+React.Strictmode: is a development mode only feature for highlighting potential problems in an application. To enable it, we simply wrap our component with <React.StrictMode>
+
+Props (properties): is one of the two types of “model” data in React. It can be thought of as the attributes in the HTML element. For instance, the attributes – type, checked – in the input tag below are props.
+```
+<input type="checkbox" checked="{true}" />
+```
+Always remember, with props, we can access state data at different levels of the component hierarchy. This is called prop drilling. And it has to do with manually getting data from component A down to component B through the props. Where component A is the parent of B.
+
+
+
+State: state data is local and specific to the component that owns it. It is not accessible to any other components, unless the owner component chooses to pass it                     down as props to its child component(s).
+
+
+
+Tips:
+1. Split and decompose the UI design into a smaller and isolated unit.
+	1. Where each of these units can be represented as a component which we can build in isolation and then later merge to form a complete UI.
+	2. Ideally, a component should take care of one functionality. This way, you are putting on the React cap which makes you think the React way.
